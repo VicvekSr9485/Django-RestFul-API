@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'RestFul_API.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6h41skb4np6rb',
+        'USER': 'tfozxjhshjzjcc',
+        'HOST': 'ec2-18-204-142-254.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'PASSWORD': 'a9a5324cba4b23cf2b5791f728eb72d2ac96ebc4b46f7c23214ee72c2319c52b'
     }
 }
 
@@ -126,3 +130,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_TRUSTED_ORIGINS = ['https://8000-vicveksr948-djangorestf-ky2ws91x0s0.ws-eu54.gitpod.io']
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login'

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import RegisterForm
 from django.contrib.auth import login, logout, authenticate
@@ -15,7 +15,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return HttpResponseRedirect(user.get_absolute_url())
+            return redirect('/')
     else:
         form = RegisterForm()
 
